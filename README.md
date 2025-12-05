@@ -66,4 +66,27 @@ The entire project is also packaged into an **Electron Desktop Application**, tu
 | Desktop App | Electron.js |
 | Assets | PNG, SVG images |
 
----
+### 🏠 Homepage  
+<p align="center">
+  <img src="img/homepage.png" width="45%" />
+  <img src="img/homepage2.png" width="45%" />
+  <img src="img/homepage3.png" width="45%" />
+
+</p>
+
+### 🛒 Cart Page  
+<p align="center">
+  <img src="img/cart.png" width="45%" />
+</p>
+
+### 🔐 Login / Signup  
+<p align="center">
+  <img src="img/signup.png" width="45%" />
+  
+</p>
+
+### 💳 Payment UI  
+<p align="center">
+  <img src="img/checkout.png" width="45%" />
+</p>
+
