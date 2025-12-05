@@ -1,0 +1,74 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #22333b;
+    background: url(./img/contact_img.jpg)  no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 90vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: linear-gradient(to bottom, #9c9b9b, #000000);
+    opacity: 0.7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+   
+    margin-top: 4rem;
+
+}
+input[type="text"],input[type="email"],input[type="tel"],.mytext {
+  background-color: #b3b3b3; /* Bluish color (adjust as needed) */
+  color: white; /* Text color (usually white for better contrast) */
+  padding: 5px 10px; /* Add padding for better spacing */
+  border-radius: 5px; /* Rounded corners for a modern look */
+  border: none; /* Remove default input borders */
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: #4f0000;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 10px 20px; 
+  border-radius: 5px;
+}

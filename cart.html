@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+       
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavnn-cart</title>
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    font-size: 18px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.header{
+    height: 80px;
+    width: 70%;
+    background-color: #000000;
+    border-radius: 3px;
+    margin: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+.header .logo{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.cart{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 3px;
+    width: 80px;
+}
+.fa-solid{
+    color: #243b55;
+}
+.cart p{
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: #000000;
+    color: white;
+}
+.container{
+    display: flex;
+    width: 70%;
+    margin-bottom: 30px;
+}
+#root{
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+.sidebar{
+    width: 40%;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+}
+.head{
+    background-color: #000000;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.foot{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 15px;
+}
+.img-box{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.images{
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: cover;
+    object-position: center;
+}
+.bottom{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+}
+h2{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+button{
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: #040505;
+    padding: 7px 25px;
+    cursor: pointer;
+    color: white;
+}
+button:hover{
+    background-color: #333;
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+.row-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rowimg{
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50%;
+}
+.fa-trash:hover{
+    cursor: pointer;
+    color: #333;
+}
+.checkout{
+    background-color: rgb(12, 52, 213);
+        height:50px;
+        width:70px;
+        border-color:black;
+        cursor:pointer;
+        border-radius:15px;
+        padding-left: 400px;
+        
+}
+.cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .remove-button {
+            background-color: rgb(0, 255, 68);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="logo">GAVNN TECH</p>
+        <div class="cart"><i class="solid cart-shopping"></i><p id="count">0</p></div>
+    </div>
+    <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">RS. 0</h2>
+               <button class="checkout-button" onclick="window.location.href='checkout.html'">Checkout</button>
+ 
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const product = [
+    {
+        id: 0,
+       image :'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494441_sd.jpg',
+        title: 'GAVNN Model SQ Phantom Black ',
+        price:54999,
+        
+    },
+    {
+        id: 1,
+        image: 'https://th.bing.com/th/id/OIP.3prtmqOYwsr6zjHOSCO6VQHaHa?rs=1&pid=ImgDetMain',
+        title: 'GAVNN Model XS Crystalline While',
+        price: 49999,
+    },
+    {
+        id: 2,
+        image: 'https://cellularinc.co.za/wp-content/uploads/2024/01/Samsung-Galaxy-A73-Mint.png',
+        title: 'GAVNN Model QR Pastel Green',
+        price: 51999,
+    },
+    {
+        id: 3,
+        image: 'https://mobizacks.com/wp-content/uploads/2022/09/samsung-galaxy-a55-1.jpg',
+        title: 'GAVNN Model SQ Aqua Blue',
+        price: 47999,
+    },
+    {
+        id: 5,
+        image: 'https://th.bing.com/th/id/OIP.qE1nCkoAUHtNXqP8vNmIOgHaHv?w=720&h=752&rs=1&pid=ImgDetMain',
+        title: 'GAVNN Model XX NightSky',
+        price: 58999,
+    },
+    {
+        id: 6,
+        image: 'https://th.bing.com/th/id/OIP.HuXsQ2-WHtOqe_xB-Oy84AHaHa?w=500&h=500&rs=1&pid=ImgDetMain',
+        title: 'GAVNN Model XX OrangeSoda',
+        price: 51499,
+    },
+    {
+        id: 7,
+        image: 'https://th.bing.com/th/id/OIP.MxtR7Y9vQQ8HEnEe865SEQHaFI?w=627&h=435&rs=1&pid=ImgDetMain',
+        title: 'GAVNN Model CZ OceanBlue',
+        price: 49999,
+    },
+    {
+        id: 8,
+        image: 'https://i0.wp.com/techtrendske.co.ke/wp-content/uploads/2018/01/Galaxy-S8-Rose-Pink-e1514975328722.jpg?fit=705%2C821',
+        title: 'GAVNN Model SQ Cotton Candy',
+        price: 55999,
+    },
+    {
+        id: 9,
+        image: 'https://images.fonearena.com/blog/wp-content/uploads/2019/05/Samsung-Galaxy-S10-Plus-Cardinal-Red.jpg',
+        title: 'GAVNN Model SQ Cherry Red',
+        price: 52999,
+    },
+    {
+        id: 10,
+        image: 'https://th.bing.com/th/id/OIP.SHX7hiIA1RxwB-HR-TrpXwHaHa?rs=1&pid=ImgDetMain',
+        title: 'GAVNN Model XX Ultra',
+        price: 67999,
+    },
+    {
+        id: 11,
+        image: 'https://priceintanzania.com/wp-content/uploads/2022/03/Samsung-Galaxy-M23-5g-pic.jpg',
+        title: 'GAVNN Model AXS Clay',
+        price: 53999,
+    },
+    {
+        id: 12,
+        image: 'https://th.bing.com/th/id/OIP.hWrrHptyWMlhZb-dJxRpLQAAAA?w=474&h=474&rs=1&pid=ImgDetMain',
+        title: 'GAVNN Model SQ Copper',
+        price: 63999,
+    },
+    {
+        id: 13,
+        image: 'https://www.ilab.lv/wp-content/uploads/2022/03/note9.png',
+        title: 'GAVNN Model SQ Purple',
+        price: 57999,
+    },
+    {
+        id: 14,
+        image: 'https://www.etradesupply.com/blog/wp-content/uploads/2018/09/6.-Samsung-Galaxy-Note-9-screen.png',
+        title: 'GAVNN Model XX Lilac Puple',
+        price: 51999,
+    },
+    
+    
+
+    
+
+]
+const categories = [...new Set(product.map((item)=>
+    {return item}))]
+    let i=0;
+document.getElementById('root').innerHTML = categories.map((item)=>
+{
+    var {image, title, price} = item;
+    return(
+        `<div class='box'>
+            <div class='img-box'>
+                <img class='images' src=${image}></img>
+            </div>
+        <div class='bottom'>
+        <p>${title}</p>
+        <h2>RS. ${price}</h2>`+
+        "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
+
+        `</div>
+        </div>`
+    )
+}).join('')
+
+var cart =[];
+
+function addtocart(a){
+    cart.push({...categories[a]});
+    displaycart();
+}
+function delElement(a){
+    cart.splice(a, 1);
+    displaycart();
+}
+
+function displaycart(){
+    let j = 0, total=0;
+    document.getElementById("count").innerHTML=cart.length;
+    if(cart.length==0){
+        document.getElementById('cartItem').innerHTML = "Your cart is empty";
+        document.getElementById("total").innerHTML = "RS."+0+"";
+    }
+    else{
+        document.getElementById("cartItem").innerHTML = cart.map((items)=>
+        {
+            var {image, title, price} = items;
+            total=total+price;
+            document.getElementById("total").innerHTML = "RS."+total+"";
+            return(
+                `<div class='cart-item'>
+                <div class='row-img'>
+                    <img class='rowimg' src=${image}>
+                </div>
+                <p style='font-size:12px;'>${title}</p>
+                <h2 style='font-size: 15px;'>RS.${price}</h2>`+
+                "<i class='solid trash' onclick='delElement("+ (j++) +")'></i></div>"
+            );
+        }).join('');
+    }
+
+    
+}
+    </script>
+    
+</body>
+</html>
