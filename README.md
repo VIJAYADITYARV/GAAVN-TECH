@@ -74,6 +74,13 @@ The entire project is also packaged into an **Electron Desktop Application**, tu
 
 </p>
 
+<p align="center">
+  <img src="img/aboutus.png" width="45%" />
+  <img src="img/aboutus2.png" width="45%" />
+  <img src="img/aboutus3.png" width="45%" />
+
+</p>
+
 ### 🛒 Cart Page  
 <p align="center">
   <img src="img/cart.png" width="45%" />
@@ -81,7 +88,7 @@ The entire project is also packaged into an **Electron Desktop Application**, tu
 
 ### 🔐 Login / Signup  
 <p align="center">
-  <img src="img/signup.png" width="45%" />
+  <img src="img/login.png" width="45%" />
   
 </p>
 
